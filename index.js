@@ -125,7 +125,7 @@ const startAtlas = async () => {
       }
       console.log(
         chalk.greenBright(
-          "All Plugins Installed Successfully ! Starting Atlas...\n"
+          "All Plugins Installed Successfully ! Starting EXCEL...\n"
         )
       );
     }
