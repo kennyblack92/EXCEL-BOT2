@@ -60,7 +60,7 @@ const startAtlas = async () => {
 
   const { saveState, state, clearState } = await getAuthFromDatabase();
   console.log(
-    figlet.textSync("ATLAS", {
+    figlet.textSync("EXCEL", {
       font: "Standard",
       horizontalLayout: "default",
       vertivalLayout: "default",
@@ -102,7 +102,7 @@ const startAtlas = async () => {
 
     if (!plugins.length || plugins.length == 0) {
       console.log(
-        chalk.redBright("No Extra Plugins Installed ! Starting Atlas...\n")
+        chalk.redBright("No Extra Plugins Installed ! Starting EXCEL...\n")
       );
     } else {
       console.log(
@@ -149,10 +149,10 @@ const startAtlas = async () => {
         );
         process.exit();
       } else if (reason === DisconnectReason.connectionClosed) {
-        console.log("[ ATLAS ] Connection closed, reconnecting....\n");
+        console.log("[ EXCEL ] Connection closed, reconnecting....\n");
         startAtlas();
       } else if (reason === DisconnectReason.connectionLost) {
-        console.log("[ ATLAS ] Connection Lost from Server, reconnecting...\n");
+        console.log("[ EXCEL] Connection Lost from Server, reconnecting...\n");
         startAtlas();
       } else if (reason === DisconnectReason.connectionReplaced) {
         console.log(
@@ -166,10 +166,10 @@ const startAtlas = async () => {
         );
         process.exit();
       } else if (reason === DisconnectReason.restartRequired) {
-        console.log("[ ATLAS ] Server Restarting...\n");
+        console.log("[ EXCEL ] Server Restarting...\n");
         startAtlas();
       } else if (reason === DisconnectReason.timedOut) {
-        console.log("[ ATLAS ] Connection Timed Out, Trying to Reconnect...\n");
+        console.log("[ EXCEL ] Connection Timed Out, Trying to Reconnect...\n");
         startAtlas();
       } else {
         console.log(
@@ -324,7 +324,7 @@ const startAtlas = async () => {
   };
 
   Atlas.sendFile = async (jid, PATH, fileName, quoted = {}, options = {}) => {
-    let types = await Atlas.getFile(PATH, true);
+    let types = await EXCEL.getFile(PATH, true);
     let { filename, size, ext, mime, data } = types;
     let type = "",
       mimetype = mime,
